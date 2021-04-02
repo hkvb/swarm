@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # START CONFIGURATION
-export VCW_STACK_GLOBAL_PACKAGE_CONTECO="hkvb/poc/blank"
+export VCW_STACK_GLOBAL_PACKAGE_CONTECO="hkvb/poc/blank/stack"
 export VCW_STACK_GLOBAL_PACKAGE_TAG="1.0.0"
 export VCW_STACK_GLOBAL_STACKNAMES="blank"
 export VCW_STACK_GLOBAL_BOOTSTACKS="_blank"

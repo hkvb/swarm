@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
- # START MODULE CONFIGURATION
+  # START MODULE CONFIGURATION
 DOLLAR='$'
 export VCW_MODULE_PACKAGES="\
-blank:hkvb/poc/blank"
+blank:hkvb/poc/blank/stack"
 # END MODULE CONFIGURATION
 
 # START CONFIGURATION

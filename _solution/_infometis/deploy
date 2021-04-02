@@ -2,6 +2,17 @@
 
 executionplane-info "EXECUTING CONTROLPLANE DEPLOY"
 
-# implementation can be overridden as required by the solution
-# the default implementation executes on all components from the top component down
-deploy $@
+.solution deploy --recurse $@
+
+.solution run boot --recurse $@
+
+sleep 30
+
+.solution run start monitor/logs $@
+.solution run start monitor/metrics_node $@
+.solution run start monitor/metrics_overlay $@
+.solution run start monitor $@
+
+sleep 60
+
+.solution run start monitor/controlcenter $@

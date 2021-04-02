@@ -1,0 +1,42 @@
+journalbeat.inputs:
+- paths: /hostfs/var/log/journal
+  seek: tail
+  include_matches: []
+
+output.console:
+  enabled: false
+  pretty: false
+
+output.elasticsearch:
+  enabled: false
+  ssl.enabled: false
+  hosts: "elasticsearch:9200"
+  index: "swarm_journal_raw"
+  username: ""
+  password: ""
+
+setup.template.name: "swarm_journal_raw"
+setup.template.pattern: "swarm_journal_raw"
+
+setup.kibana.host: "kibana:5601"
+setup.dashboards.enabled: false
+
+output.kafka:
+  enabled: true
+  ssl.enabled: false
+  hosts: "kafka:9092"
+  username: ""
+  password: ""
+  topic: 'swarm_journal_raw'
+  version: "2.0.0"
+  partition.round_robin:
+    reachable_only: false
+
+  required_acks: 1
+  compression: gzip
+  max_message_bytes: 1000000
+
+logging.level: ${ES_JOURNALBEAT_LOGGING_LEVEL:warning}
+logging.metrics.enabled: false
+logging.metrics.period: 30s
+logging.json: false

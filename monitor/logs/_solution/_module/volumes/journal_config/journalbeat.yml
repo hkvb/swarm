@@ -1,0 +1,42 @@
+journalbeat.inputs:
+- paths: /hostfs/var/log/journal
+  seek: tail
+  include_matches: []
+
+output.console:
+  enabled: false
+  pretty: false
+
+output.elasticsearch:
+  enabled: true
+  ssl.enabled: false
+  hosts: "elasticsearch:9200"
+  index: "journalbeat"
+  username: ""
+  password: ""
+
+setup.template.name: "journalbeat"
+setup.template.pattern: "journalbeat"
+
+setup.kibana.host: "kibana:5601"
+setup.dashboards.enabled: false
+
+output.kafka:
+  enabled: false
+  ssl.enabled: false
+  hosts: "kafka:9092"
+  username: ""
+  password: ""
+  topic: 'es_journalbeat_kafka'
+  version: "2.0.0"
+  partition.round_robin:
+    reachable_only: false
+
+  required_acks: 1
+  compression: gzip
+  max_message_bytes: 1000000
+
+logging.level: ${ES_JOURNALBEAT_LOGGING_LEVEL:warning}
+logging.metrics.enabled: false
+logging.metrics.period: 30s
+logging.json: false

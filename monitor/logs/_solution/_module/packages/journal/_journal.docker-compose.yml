@@ -1,0 +1,25 @@
+---
+version: '3'
+services:
+
+# START SERVICE hkvb/elastic/journalbeat
+  journalbeat:
+    image: ${VCW_REGISTRY}hkvb/elastic.journalbeat:7.11.2
+    environment: ['ES_JOURNALBEAT_LOGGING_LEVEL=${JOURNAL_ENVIRONMENT_LOGGING_LEVEL}']
+    command: []
+    volumes: ['${VCW_STACK_GLOBAL_STACKPREFIX}_config:/vcw/pwd','${VCW_STACK_GLOBAL_STACKPREFIX}_volume:/usr/share/journalbeat/data','/etc:/hostfs/etc:ro','${JOURNAL_VOLUMES_HOST_JOURNALPATH}:/hostfs/var/log/journal:ro']
+    ports: []
+    networks: [${VCW_STACK_GLOBAL_NETWORKLOCAL}_overlay]
+    deploy:
+      mode: ${JOURNAL_DEPLOY_MODE}
+      resources:
+        limits:
+          memory: '${JOURNAL_DEPLOY_RESOURCES_LIMITS_MEMORY}'
+        reservations:
+          memory: '${JOURNAL_DEPLOY_RESOURCES_RESERVATIONS_MEMORY}'
+${JOURNAL_COMPOSE_EXTENSIONS}
+# END SERVICE hkvb/elastic/journalbeat
+
+networks: {${VCW_STACK_GLOBAL_NETWORKLOCAL}_overlay: { external: true }}
+volumes: {${VCW_STACK_GLOBAL_STACKPREFIX}_config: { external: true },${VCW_STACK_GLOBAL_STACKPREFIX}_volume: { external: true }}
+${VCW_STACK_GLOBAL_COMPOSE_EXTENSIONS}

@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+executionplane --silent docker volume create hkvb_swarm__monitor__metrics_node_config
+	
+executionplane --silent docker volume create hkvb_swarm__monitor__metrics_node_volume
+	
+
+executionplane --silent docker run -v vcw_infometis_repos:/source -v hkvb_swarm__monitor__metrics_node_config:/vcw/pwd ${VCW_REGISTRY}hkvb/infometis console cmd cp -r /source/hkvb/swarm/monitor/metrics_node/_solution/_configuration/volumes/metrics_node_config/* /vcw/pwd
+

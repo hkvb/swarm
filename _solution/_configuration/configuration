@@ -2,7 +2,7 @@
 
   # START COMPONENT CONFIGURATION
 DOLLAR='$'
-export VCW_SOLUTON_COMPONENT_MODULE="hkvb/poc/blank"
+export VCW_SOLUTON_COMPONENT_MODULE="hkvb/poc/blank/module"
 export VCW_SOLUTON_HIDE_COMPONENT="false"
 # END COMPONENT CONFIGURATION
 #!/usr/bin/env bash

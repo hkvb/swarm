@@ -2,7 +2,7 @@
 
    # START COMPONENT CONFIGURATION
 DOLLAR='$'
-export VCW_SOLUTON_COMPONENT_MODULE="hkvb/poc/blank"
+export VCW_SOLUTON_COMPONENT_MODULE="hkvb/poc/blank/module"
 export VCW_SOLUTON_HIDE_COMPONENT="false"
 # END COMPONENT CONFIGURATION
 #!/usr/bin/env bash
@@ -10,7 +10,7 @@ export VCW_SOLUTON_HIDE_COMPONENT="false"
  # START MODULE CONFIGURATION
 DOLLAR='$'
 export VCW_MODULE_PACKAGES="\
-blank:hkvb/poc/blank"
+blank:hkvb/poc/blank/stack"
 # END MODULE CONFIGURATION
 
 # START CONFIGURATION

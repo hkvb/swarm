@@ -1,9 +1,14 @@
 #!/usr/bin/env bash
 
-executionplane --silent docker volume create hkvb_swarm__monitor__metrics_overlay_config
+executionplane --silent docker volume create hkvb_swarm_monitor__metrics_overlay_config
 	
-executionplane --silent docker volume create hkvb_swarm__monitor__metrics_overlay_volume
+executionplane --silent docker volume create hkvb_swarm_monitor__metrics_overlay_entrypoint
+	
+executionplane --silent docker volume create hkvb_swarm_monitor__metrics_overlay_volume
 	
 
-executionplane --silent docker run -v vcw_infometis_repos:/source -v hkvb_swarm__monitor__metrics_overlay_config:/vcw/pwd ${VCW_REGISTRY}hkvb/infometis console cmd cp -r /source/hkvb/swarm/monitor/metrics_overlay/_solution/_configuration/volumes/metrics_overlay_config/* /vcw/pwd
+executionplane --silent docker run -v vcw_infometis_repos:/source -v hkvb_swarm_monitor__metrics_overlay_config:/vcw/pwd ${VCW_REGISTRY}hkvb/infometis console cmd cp -r /source/hkvb/swarm/monitor/metrics_overlay/_solution/_configuration/volumes/metrics_overlay_config/* /vcw/pwd
+
+
+executionplane --silent docker run -v vcw_infometis_repos:/source -v hkvb_swarm_monitor__metrics_overlay_entrypoint:/vcw/bin ${VCW_REGISTRY}hkvb/infometis console cmd cp -r /source/hkvb/swarm/monitor/metrics_overlay/_solution/_configuration/volumes/metrics_overlay_entrypoint/* /vcw/bin
 

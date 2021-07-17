@@ -7,7 +7,7 @@ export VCW_SOLUTON_HIDE_COMPONENT="true"
 # END COMPONENT CONFIGURATION
 #!/usr/bin/env bash
 
-# START MODULE CONFIGURATION
+   # START MODULE CONFIGURATION
 DOLLAR='$'
 export VCW_MODULE_PACKAGES="\
 metrics_node:hkvb/elastic/metricbeat/node"

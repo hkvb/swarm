@@ -1,3 +1,10 @@
+#!/usr/bin/env bash
+
+ # START MODULE CONFIGURATION
+DOLLAR='$'
+export VCW_MODULE_PACKAGES="\
+journal:hkvb/elastic/journalbeat"
+# END MODULE CONFIGURATION
 
 # START CONFIGURATION
 export JOURNAL_MODULE_JOURNALBEAT_HOST_JOURNALPATH="/var/log/journal"

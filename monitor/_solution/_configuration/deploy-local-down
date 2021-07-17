@@ -4,8 +4,8 @@ executionplane --silent docker container prune --force
 continue="true"
 while [[ "true" == "$continue" ]] ;
 do
-	executionplane docker volume rm "hkvb_swarm__monitor__elastic_volume"
-	result=$(docker volume ls | grep "hkvb_swarm__monitor__elastic_volume")
+	executionplane docker volume rm "hkvb_swarm_monitor__elastic_volume"
+	result=$(docker volume ls | grep "hkvb_swarm_monitor__elastic_volume")
 	if [[ "$result" == "" ]] ; then
 		continue="false"
 	else
@@ -16,8 +16,8 @@ done;
 continue="true"
 while [[ "true" == "$continue" ]] ;
 do
-	executionplane docker volume rm "hkvb_swarm__monitor__grafana_volume"
-	result=$(docker volume ls | grep "hkvb_swarm__monitor__grafana_volume")
+	executionplane docker volume rm "hkvb_swarm_monitor__grafana_volume"
+	result=$(docker volume ls | grep "hkvb_swarm_monitor__grafana_volume")
 	if [[ "$result" == "" ]] ; then
 		continue="false"
 	else
@@ -28,8 +28,8 @@ done;
 continue="true"
 while [[ "true" == "$continue" ]] ;
 do
-	executionplane docker volume rm "hkvb_swarm__monitor__kafka_secrets_volume"
-	result=$(docker volume ls | grep "hkvb_swarm__monitor__kafka_secrets_volume")
+	executionplane docker volume rm "hkvb_swarm_monitor__kafka_secrets_volume"
+	result=$(docker volume ls | grep "hkvb_swarm_monitor__kafka_secrets_volume")
 	if [[ "$result" == "" ]] ; then
 		continue="false"
 	else
@@ -40,8 +40,8 @@ done;
 continue="true"
 while [[ "true" == "$continue" ]] ;
 do
-	executionplane docker volume rm "hkvb_swarm__monitor__kafka_data_volume"
-	result=$(docker volume ls | grep "hkvb_swarm__monitor__kafka_data_volume")
+	executionplane docker volume rm "hkvb_swarm_monitor__kafka_data_volume"
+	result=$(docker volume ls | grep "hkvb_swarm_monitor__kafka_data_volume")
 	if [[ "$result" == "" ]] ; then
 		continue="false"
 	else
@@ -52,8 +52,8 @@ done;
 continue="true"
 while [[ "true" == "$continue" ]] ;
 do
-	executionplane docker volume rm "hkvb_swarm__monitor__ksqldb_queries_volume"
-	result=$(docker volume ls | grep "hkvb_swarm__monitor__ksqldb_queries_volume")
+	executionplane docker volume rm "hkvb_swarm_monitor__ksqldb_queries_volume"
+	result=$(docker volume ls | grep "hkvb_swarm_monitor__ksqldb_queries_volume")
 	if [[ "$result" == "" ]] ; then
 		continue="false"
 	else
@@ -64,8 +64,8 @@ done;
 continue="true"
 while [[ "true" == "$continue" ]] ;
 do
-	executionplane docker volume rm "hkvb_swarm__monitor__schema_registry_secrets_volume"
-	result=$(docker volume ls | grep "hkvb_swarm__monitor__schema_registry_secrets_volume")
+	executionplane docker volume rm "hkvb_swarm_monitor__schema_registry_secrets_volume"
+	result=$(docker volume ls | grep "hkvb_swarm_monitor__schema_registry_secrets_volume")
 	if [[ "$result" == "" ]] ; then
 		continue="false"
 	else
@@ -76,8 +76,8 @@ done;
 continue="true"
 while [[ "true" == "$continue" ]] ;
 do
-	executionplane docker volume rm "hkvb_swarm__monitor__streamsets_volume"
-	result=$(docker volume ls | grep "hkvb_swarm__monitor__streamsets_volume")
+	executionplane docker volume rm "hkvb_swarm_monitor__streamsets_volume"
+	result=$(docker volume ls | grep "hkvb_swarm_monitor__streamsets_volume")
 	if [[ "$result" == "" ]] ; then
 		continue="false"
 	else
@@ -88,8 +88,8 @@ done;
 continue="true"
 while [[ "true" == "$continue" ]] ;
 do
-	executionplane docker volume rm "hkvb_swarm__monitor__zookeeper_secrets_volume"
-	result=$(docker volume ls | grep "hkvb_swarm__monitor__zookeeper_secrets_volume")
+	executionplane docker volume rm "hkvb_swarm_monitor__zookeeper_secrets_volume"
+	result=$(docker volume ls | grep "hkvb_swarm_monitor__zookeeper_secrets_volume")
 	if [[ "$result" == "" ]] ; then
 		continue="false"
 	else
@@ -100,8 +100,8 @@ done;
 continue="true"
 while [[ "true" == "$continue" ]] ;
 do
-	executionplane docker volume rm "hkvb_swarm__monitor__zookeeper_data_volume"
-	result=$(docker volume ls | grep "hkvb_swarm__monitor__zookeeper_data_volume")
+	executionplane docker volume rm "hkvb_swarm_monitor__zookeeper_data_volume"
+	result=$(docker volume ls | grep "hkvb_swarm_monitor__zookeeper_data_volume")
 	if [[ "$result" == "" ]] ; then
 		continue="false"
 	else
@@ -112,8 +112,8 @@ done;
 continue="true"
 while [[ "true" == "$continue" ]] ;
 do
-	executionplane docker volume rm "hkvb_swarm__monitor__zookeeper_log_volume"
-	result=$(docker volume ls | grep "hkvb_swarm__monitor__zookeeper_log_volume")
+	executionplane docker volume rm "hkvb_swarm_monitor__zookeeper_log_volume"
+	result=$(docker volume ls | grep "hkvb_swarm_monitor__zookeeper_log_volume")
 	if [[ "$result" == "" ]] ; then
 		continue="false"
 	else

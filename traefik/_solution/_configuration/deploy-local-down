@@ -4,8 +4,8 @@ executionplane --silent docker container prune --force
 continue="true"
 while [[ "true" == "$continue" ]] ;
 do
-	executionplane docker volume rm "hkvb_swarm__traefik__traefik_config_volume"
-	result=$(docker volume ls | grep "hkvb_swarm__traefik__traefik_config_volume")
+	executionplane docker volume rm "hkvb_swarm_traefik__traefik_config_volume"
+	result=$(docker volume ls | grep "hkvb_swarm_traefik__traefik_config_volume")
 	if [[ "$result" == "" ]] ; then
 		continue="false"
 	else

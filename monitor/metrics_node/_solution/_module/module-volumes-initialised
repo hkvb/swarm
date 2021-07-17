@@ -1,1 +1,2 @@
 metrics_node_config:/vcw/pwd
+metrics_node_entrypoint:/vcw/bin

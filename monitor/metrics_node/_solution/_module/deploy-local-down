@@ -19,6 +19,20 @@ if [[ "vcw_module_hkvb_elastic_metricbeat_node__metrics_node_config" == "$prefix
 	done;
 fi
 
+if [[ "vcw_module_hkvb_elastic_metricbeat_node__metrics_node_entrypoint" == "$prefix"* ]] ; then
+	continue="true"
+	while [[ "true" == "$continue" ]] ;
+	do
+		executionplane docker volume rm "vcw_module_hkvb_elastic_metricbeat_node__metrics_node_entrypoint"
+		result=$(docker volume ls | grep "vcw_module_hkvb_elastic_metricbeat_node__metrics_node_entrypoint")
+		if [[ "$result" == "" ]] ; then
+			continue="false"
+		else
+			sleep 3;
+		fi
+	done;
+fi
+
 if [[ "vcw_module_hkvb_elastic_metricbeat_node__metrics_node_volume" == "$prefix"* ]] ; then
 	continue="true"
 	while [[ "true" == "$continue" ]] ;

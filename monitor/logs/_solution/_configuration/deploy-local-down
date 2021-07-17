@@ -4,8 +4,8 @@ executionplane --silent docker container prune --force
 continue="true"
 while [[ "true" == "$continue" ]] ;
 do
-	executionplane docker volume rm "hkvb_swarm__monitor__journal_config"
-	result=$(docker volume ls | grep "hkvb_swarm__monitor__journal_config")
+	executionplane docker volume rm "hkvb_swarm_monitor__journal_config"
+	result=$(docker volume ls | grep "hkvb_swarm_monitor__journal_config")
 	if [[ "$result" == "" ]] ; then
 		continue="false"
 	else
@@ -16,8 +16,20 @@ done;
 continue="true"
 while [[ "true" == "$continue" ]] ;
 do
-	executionplane docker volume rm "hkvb_swarm__monitor__journal_volume"
-	result=$(docker volume ls | grep "hkvb_swarm__monitor__journal_volume")
+	executionplane docker volume rm "hkvb_swarm_monitor__journal_entrypoint"
+	result=$(docker volume ls | grep "hkvb_swarm_monitor__journal_entrypoint")
+	if [[ "$result" == "" ]] ; then
+		continue="false"
+	else
+		sleep 3;
+	fi
+done;
+	
+continue="true"
+while [[ "true" == "$continue" ]] ;
+do
+	executionplane docker volume rm "hkvb_swarm_monitor__journal_volume"
+	result=$(docker volume ls | grep "hkvb_swarm_monitor__journal_volume")
 	if [[ "$result" == "" ]] ; then
 		continue="false"
 	else

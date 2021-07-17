@@ -62,7 +62,7 @@ export KSQLDB_MODULE_KSQLDB_ENVIRONMENT_EXTRA=", \
 'KSQL_CONSUMER_INTERCEPTOR_CLASSES=io.confluent.monitoring.clients.interceptor.MonitoringConsumerInterceptor', \
 'KSQL_KSQL_SCHEMA_REGISTRY_URL=http://${VCW_HOSTNAME}/${VCW_STACK_MODULE_URLPREFIX}/schema_registry', \
 'KSQL_KSQL_ADVERTISED_LISTENER=http://${VCW_HOSTNAME}/${VCW_STACK_MODULE_URLPREFIX}/ksqldb', \
-'KSQL_KSQL_QUERIES_FILE=/vcw/pwd/queries.sql'
+'KSQL_KSQL_QUERIES_FILE=/vcw/queries/queries.sql'
 "
 #'KSQL_LISTENERS=http://0.0.0.0:8088'
 #export VCW_STACK_KSQLDB_MODE=",'KSQL_LISTENERS=http://0.0.0.0:8088','KSQL_KSQL_SCHEMA_REGISTRY_URL=http://schema_registry:8081'"
